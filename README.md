@@ -1,35 +1,37 @@
 # SETUP .dotfiles FOLDER <!-- omit in toc -->
 
-- [WSL2 + Ubuntu 22.04](#wsl2--ubuntu-2204)
-- [Update apt, install build essential, and auto remove](#update-apt-install-build-essential-and-auto-remove)
-- [Install zsh](#install-zsh)
-- [Install Visual Studio Code](#install-visual-studio-code)
-- [Install Rust Programming Language](#install-rust-programming-language)
-- [Install nvm](#install-nvm)
-- [Use Astro](#use-astro)
+
+1. [WSL2 + Ubuntu 22.04](#wsl2-+-ubuntu-22.04)
+2. [Update apt, install build essential, and auto remove](#update-apt,-install-build-essential,-and-auto-remove)
+3. [Cloning this repo](#cloning-this-repo)
+4. [Install Starship](#install-starship)
+5. [Install Rust Programming Language](#install-rust-programming-language)
+6. [Install nvm](#install-nvm)
+7. [Use Astro](#use-astro)
+8. [Use Svelte + Rust wasm](#use-svelte-+-rust-wasm)
 
 ## WSL2 + Ubuntu 22.04
 
 1. Install `Windows Terminal` through Microsoft Store
 2. Run this command to install WSL [Windows Subsystem for Linux]
 
-    ```cmd
-    wsl --install
-    ```
+```bash
+wsl --install
+```
 
 3. Reset computer
 4. Run update WSL to get WSL2
 
-    ```cmd
-    wsl --update
-    ```
+```bash
+wsl --update
+```
 
 5. Go to Microsoft Store, find `Ubuntu 22.04` and install it
 6. Run `Ubuntu 22.04` from Start to setup username, password,...
 
 ## Update apt, install build essential, and auto remove
 
-```sh
+```bash
 # Update and upgrade [with yes to all]
 sudo apt update && sudo apt upgrade -y
 # Install essentials for build in Ubuntu
@@ -38,6 +40,13 @@ sudo apt-get install build-essential
 sudo apt-get install pkg-config libssl-dev
 # Remove no longer needed packages
 sudo apt autoremove
+
+# Install Neovim
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt-get update
+sudo apt-get install neovim
+
 
 # Install these libraries for GUI application
 sudo apt-get install libx11-xcb1 libx11-xcb-dev libegl-dev
@@ -50,7 +59,7 @@ sudo apt-get install libfontconfig-dev
 
 In Windows you need to update the `WSLENV` environment variable to include the value `GIT_EXEC_PATH/wp`. From an Administrator Command Prompt run the following:
 
-```cmd
+```bash
 SETX WSLENV %WSLENV%:GIT_EXEC_PATH/wp
 ```
 
@@ -60,7 +69,7 @@ After updating the `WSLENV` environment variable, restart your WSL installation.
 
 Change remote url if needed
 
-```sh
+```bash
 git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 ```
 
@@ -73,17 +82,15 @@ It should look like this
 
 ## Install Starship
 
-```sh
-
+```bash
 curl -sS https://starship.rs/install.sh | sh
-
 ```
 
 ## Install Rust Programming Language
 
 Watch tutorial [here](https://www.rust-lang.org/learn/get-started) if needed
 
-```sh
+```bash
 # Install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # Install rust-analyzer (if using Lapce)
@@ -114,7 +121,7 @@ b_lnx = "build --target x86_64-unknown-linux-gnu"
 
 Install nvm with this [tutorial](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl)
 
-```sh
+```bash
 # Install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 # Log out and log in again before use the command below
@@ -132,13 +139,15 @@ nvm use node
 
 [Learn Astro here](https://docs.astro.build/en/getting-started/)
 
-```sh
+```bash
 # Create new project with astro
 npm create astro@latest
 ```
 
 ## Use Svelte + Rust wasm
 
-```sh
+```bash
 git clone "https://github.com/calisfed/sveltekit-rust-wasm"
+
 ```
+
