@@ -48,19 +48,6 @@ sudo apt-get install libfontconfig-dev
 
 ```
 
-## Generate SSH key
-
-```sh
-# Generate ssh key with my email
-ssh-keygen -t ed25519 -C "79589892+calisfed@users.noreply.github.com"
-# Connect to aythen agent
-eval "$(ssh-agent -s)"
-# Add ssh key to agent
-ssh-add ~/.ssh/id_ed25519
-# Copy ssh key to add in Github
-cat ~/.ssh/id_ed25519.pub
-```
-
 In Windows you need to update the `WSLENV` environment variable to include the value `GIT_EXEC_PATH/wp`. From an Administrator Command Prompt run the following:
 
 ```cmd
@@ -84,62 +71,13 @@ Only proceed this part below after cloned this repo into `$HOME`
 
 It should look like this
 
->~/.dotfiles
-
-```sh
-# Remove existing files
-rm ~/.gitconfig
-rm ~/.profile
-rm ~/.bashrc
-rm -rf ~/.cargo
-rm -rf ~/.config
-# rm ~/.zshrc
-# rm ~/.zshenv
-# Symbolic link from cas.conf/.dotfiles folder to $HOME
-# ln -s ~/.dotfiles/.zshrc ~/.zshrc
-# ln -s ~/.dotfiles/.zshenv ~/.zshenv
-
-ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/.profile ~/.profile
-ln -s ~/.dotfiles/.bashrc ~/.bashrc
-ln -s ~/.dotfiles/.cargo ~/.cargo
-ln -s ~/.dotfiles/.config ~/.config
-
-ln -s ~/.dotfiles/.xsession ~/.xsession
-
-sudo rm /etc/wsl.conf
-sudo ln -s ~/.dotfiles/wsl.conf /etc/wsl.conf
-
-sudo rm /etc/shells
-sudo ln -s ~/.dotfiles/shells /etc/shells
-```
-
-## Install nuShell
-
+## Install Starship
 
 ```sh
 
 curl -sS https://starship.rs/install.sh | sh
 
-# Install Nushell
-https://github.com/nushell/nushell
-# Set nushell as default
-chsh -s $(which nu)
-# Create init file for starship open when nu
-starship init nu | save ~/.config/starship_init.nu
-# Append this line to the end of config.nu
-source ~/.config/starship_init.nu
 ```
-
-## Install Visual Studio Code
-
-Install [Vscode](https://code.visualstudio.com/download)
-
-## Install Lapce
-
-Install [Lapce](https://lapce.dev/) or [Github page](https://github.com/lapce/lapce)
-
-
 
 ## Install Rust Programming Language
 

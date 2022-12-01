@@ -96,7 +96,7 @@ return packer.startup(function(use)
 	use { "lewis6991/gitsigns.nvim", commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" }
     
     -- Markdown
-
+    use { "mzlogin/vim-markdown-toc" }
 
 
 	-- Automatically set up your configuration after cloning packer.nvim
