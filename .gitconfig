@@ -1,0 +1,7 @@
+[user]
+	name = calisfed
+	email = 79589892+calisfed@users.noreply.github.com
+[alias]
+	ac = commit -am
+[init]
+	defaultBranch = main
