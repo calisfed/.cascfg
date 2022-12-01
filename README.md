@@ -16,14 +16,20 @@
 2. Run this command to install WSL [Windows Subsystem for Linux]
 
 ```bash
+
 wsl --install
+
+
 ```
 
 3. Reset computer
 4. Run update WSL to get WSL2
 
 ```bash
+
 wsl --update
+
+
 ```
 
 5. Go to Microsoft Store, find `Ubuntu 22.04` and install it
@@ -32,6 +38,7 @@ wsl --update
 ## Update apt, install build essential, and auto remove
 
 ```bash
+
 # Update and upgrade [with yes to all]
 sudo apt update && sudo apt upgrade -y
 # Install essentials for build in Ubuntu
@@ -60,7 +67,10 @@ sudo apt-get install libfontconfig-dev
 In Windows you need to update the `WSLENV` environment variable to include the value `GIT_EXEC_PATH/wp`. From an Administrator Command Prompt run the following:
 
 ```bash
+
 SETX WSLENV %WSLENV%:GIT_EXEC_PATH/wp
+
+
 ```
 
 After updating the `WSLENV` environment variable, restart your WSL installation.

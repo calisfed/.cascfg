@@ -87,9 +87,7 @@ return packer.startup(function(use)
 	use { "nvim-telescope/telescope.nvim",}
 
 	-- Treesitter
-	use {
-		"nvim-treesitter/nvim-treesitter",
-	}
+	use {"nvim-treesitter/nvim-treesitter",}
 
 	-- Git
 	use { "lewis6991/gitsigns.nvim",}
@@ -98,7 +96,7 @@ return packer.startup(function(use)
     -- use { "mzlogin/vim-markdown-toc" }
     use { "preservim/vim-markdown", cmd = {
         'let g:vim_markdown_folding_disabled = 1',
-        'let g:vim_markdown_fenced_languages = ["sh=bash]'
+        'let g:vim_markdown_fenced_languages = ["sh=bash"]'
     }}
 
     use { 'godlygeek/tabular' }
