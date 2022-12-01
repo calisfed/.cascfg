@@ -85,10 +85,47 @@ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 
 ## Cloning this repo
 
->**WARNING:**
-Only proceed this part below after cloned this repo into `$HOME`
+[Tut here](https://www.atlassian.com/git/tutorials/dotfiles)
 
-It should look like this
+```bash
+
+git clone --bare  https://github.com/calisfed/.cascfg $HOME/.cascfg
+
+```
+
+Checkout the actual content from the bare repository to your `$HOME`
+
+```bash
+
+cas checkout
+
+```
+
+The step above might fail with a message like:
+
+```bash
+
+error: The following untracked working tree files would be overwritten by checkout:
+    .bashrc
+    .gitignore
+Please move or remove them before you can switch branches.
+Aborting
+
+```
+
+This is because your $HOME folder might already have some stock configuration files which would be overwritten by Git. The solution is simple: back up the files if you care about them, remove them if you don't care.
+
+Run this line to set the flag showUntrackedFiles to no on this specific (local) repository
+
+```bash
+
+cas config --local status.showUntrackedFiles no
+
+```
+
+
+>**WARNING:**
+Only proceed this part below after cloned this repo 
 
 ## Install Starship
 
