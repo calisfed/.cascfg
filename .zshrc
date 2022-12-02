@@ -1,6 +1,12 @@
 setopt auto_cd
 cdpath=($HOME/projects $HOME)
-cd ~
+# cd ~
+
+# IF IN THE MAIN SHELL THEN FIRST TIME OPEN WILL BE AT $HOME DIRECTORY
+if [[ $SHLVL -eq 1 ]]
+then
+    cd $HOME
+fi 
 
 export ZSH="$HOME/.cascfg/oh-my-zsh"
 export PATH="/home/$USER/.local/bin:$PATH"
