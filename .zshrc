@@ -40,7 +40,6 @@ plugins=(
     zsh-syntax-highlighting
     pipenv
 )
-
 source $ZSH/oh-my-zsh.sh
 
 
@@ -81,5 +80,18 @@ export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
 #
 
 # fnm
-export PATH=/home/v/.fnm:$PATH
-eval "`fnm env`"
+# export PATH=/home/v/.fnm:$PATH
+# eval "`fnm env`"
+
+
+# Nvim as default editor
+set -o vi
+EDITOR=vi
+
+# aluas Tmux with config and run at login
+alias tmux="tmux -f ~/.config/tmux/tmux.conf"
+case $- in *i*)
+    [ -z "$TMUX" ] && exec tmux
+esac
+
+
